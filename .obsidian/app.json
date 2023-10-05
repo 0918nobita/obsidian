@@ -1,0 +1,15 @@
+{
+  "promptDelete": false,
+  "showLineNumber": false,
+  "propertiesInDocument": "source",
+  "livePreview": false,
+  "autoPairMarkdown": false,
+  "autoPairBrackets": false,
+  "spellcheck": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "/",
+  "userIgnoreFilters": [
+    "scripts/"
+  ],
+  "alwaysUpdateLinks": true
+}
