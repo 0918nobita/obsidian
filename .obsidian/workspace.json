@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "9127929e21b3c069",
+        "id": "614d7fddafc21311",
         "type": "tabs",
         "children": [
           {
-            "id": "98321b157414e840",
+            "id": "1052c0b0fd6ef433",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md"
+              }
             }
           }
         ]
@@ -138,8 +146,9 @@
       "command-palette:コマンドパレットを開く": false
     }
   },
-  "active": "98321b157414e840",
+  "active": "df1efafdd116c448",
   "lastOpenFiles": [
+    "README.md",
     "生涯学習を考える/第1回 学びと人間/学びと人間.md",
     "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
     "生涯学習を考える/第1回 学びと人間",
