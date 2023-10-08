@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0bbde4d5b420a9b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "アークナイツ.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "放送大学.md",
+            "file": "アークナイツ.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "放送大学.md",
+            "file": "アークナイツ.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +139,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "放送大学.md"
+            "file": "アークナイツ.md"
           }
         }
       }
@@ -144,10 +156,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "86bb80f748ab8286",
+  "active": "0bbde4d5b420a9b1",
   "lastOpenFiles": [
-    "博物館資料論/第1回 博物館における資料とは/4 博物館外での展示会の開催.md",
     "放送大学.md",
+    "アークナイツ.md",
+    "博物館資料論/第1回 博物館における資料とは/4 博物館外での展示会の開催.md",
     "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
     "博物館資料論/第1回 博物館における資料とは/3 資料の保管・記録・展示.md",
     "博物館資料論/第1回 博物館における資料とは/2 資料の写真撮影と梱包.md",
