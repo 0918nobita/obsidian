@@ -1,3 +1,6 @@
 {
-  "accentColor": ""
+  "accentColor": "",
+  "monospaceFontFamily": "Fira Code",
+  "interfaceFontFamily": "Noto Sans JP",
+  "textFontFamily": "Noto Sans JP"
 }

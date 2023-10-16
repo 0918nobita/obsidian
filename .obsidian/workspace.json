@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
+                "file": "放送大学.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 299.5
   },
   "right": {
     "id": "2c6231c3f5b8b1b3",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
+                "file": "放送大学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
+                "file": "放送大学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md"
+                "file": "放送大学.md"
               }
             }
           }
@@ -139,18 +138,19 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:クイックスイッチャーを開く": false,
-      "graph:グラフビューを開く": false,
-      "canvas:新規キャンバスを作成": false,
-      "daily-notes:今日のデイリーノートを開く": false,
-      "templates:テンプレートを挿入": false,
-      "command-palette:コマンドパレットを開く": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "a1aea0d7c4d16d64",
+  "active": "df1efafdd116c448",
   "lastOpenFiles": [
-    "生涯学習を考える/第2回 フロントエンドの学校教育/2 学校教育と人材育成.md",
+    "生涯学習を考える/第2回 フロントエンドの学校教育/4 フロントエンドからリカレントへ.md",
     "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
+    "生涯学習を考える/第2回 フロントエンドの学校教育/2 学校教育と人材育成.md",
     "コンパイラを開発したい.md",
     "生涯学習を考える/第2回 フロントエンドの学校教育/1 近代社会と学校教育.md",
     "生涯学習を考える/第2回 フロントエンドの学校教育",
