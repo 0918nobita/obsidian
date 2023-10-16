@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "コンパイラを開発したい.md",
+                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2c6231c3f5b8b1b3",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "コンパイラを開発したい.md",
+                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "コンパイラを開発したい.md",
+                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "コンパイラを開発したい.md"
+                "file": "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md"
               }
             }
           }
@@ -149,6 +150,8 @@
   "active": "a1aea0d7c4d16d64",
   "lastOpenFiles": [
     "生涯学習を考える/第2回 フロントエンドの学校教育/2 学校教育と人材育成.md",
+    "生涯学習を考える/第2回 フロントエンドの学校教育/3 フロントエンド型学校教育.md",
+    "コンパイラを開発したい.md",
     "生涯学習を考える/第2回 フロントエンドの学校教育/1 近代社会と学校教育.md",
     "生涯学習を考える/第2回 フロントエンドの学校教育",
     "生涯学習を考える/成人が学習する意義.md",
@@ -156,7 +159,6 @@
     "生涯学習を考える/近隣の社会教育施設の活用.md",
     "生涯学習を考える/第1回 学びと人間/学びと人間.md",
     "生涯学習を考える/第1回 学びと人間/受講する動機や目的.md",
-    "コンパイラを開発したい.md",
     "放送大学.md",
     "アークナイツ.md",
     "README.md",
