@@ -1,1 +1,5 @@
-# My Obsidian vault
+# Obsidian 保管庫
+
+講義ノートや軽いメモ書き、日記として使っています
+
+自由に手元のマシンに clone して Obsidian から vault として開く等の方法で内容を見てもらって構いません
