@@ -21,7 +21,7 @@
   },
   "quarterly": {
     "format": "",
-    "template": "",
+    "template": "0-Template/Quarterly Note.md",
     "folder": "4-Quarterly",
     "enabled": true
   },
