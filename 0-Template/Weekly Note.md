@@ -1,19 +1,12 @@
-<%*
-const lastWeek = tp.date.weekday("YYYY-[W]ww", -7);
-const nextWeek = tp.date.weekday("YYYY-[W]ww", 7);
--%>
-<< [[2-Weekly/<% lastWeek %>|<% lastWeek %>]] | [[2-Weekly/<% nextWeek %>|<% nextWeek %>]] >>
-<%*
-const weekdays = [...Array(7).keys()].map(weekday => tp.date.weekday("YYYY-MM-DD", weekday));
--%>
+<< [[2-Weekly/2023-W41|2023-W41]] | [[2-Weekly/2023-W43|2023-W43]] >>
 
-[[1-Daily/<% weekdays[0] %>|<% weekdays[0] %>]]
-[[1-Daily/<% weekdays[1] %>|<% weekdays[1] %>]]
-[[1-Daily/<% weekdays[2] %>|<% weekdays[2] %>]]
-[[1-Daily/<% weekdays[3] %>|<% weekdays[3] %>]]
-[[1-Daily/<% weekdays[4] %>|<% weekdays[4] %>]]
-[[1-Daily/<% weekdays[5] %>|<% weekdays[5] %>]]
-[[1-Daily/<% weekdays[6] %>|<% weekdays[6] %>]]
+[[1-Daily/2023-10-16|2023-10-16]]
+[[1-Daily/2023-10-17|2023-10-17]]
+[[1-Daily/2023-10-18|2023-10-18]]
+[[1-Daily/2023-10-19|2023-10-19]]
+[[1-Daily/2023-10-20|2023-10-20]]
+[[1-Daily/2023-10-21|2023-10-21]]
+[[1-Daily/2023-10-22|2023-10-22]]
 ## 目標
 ## Keep
 ## Problem
