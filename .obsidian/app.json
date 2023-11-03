@@ -5,5 +5,7 @@
   "livePreview": false,
   "autoPairMarkdown": false,
   "autoPairBrackets": false,
-  "spellcheck": false
+  "spellcheck": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Inbox"
 }
