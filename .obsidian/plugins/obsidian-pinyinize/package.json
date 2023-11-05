@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "name": "@0918nobita/obsidian-pinyinize",
+    "version": "0.1.0",
+    "description": "Annote chinese sentenses with pinyin",
+    "author": "Kodai Matsumoto <nobita.0918@gmail.com>",
+    "main": "main.js",
+    "scripts": {
+        "typecheck": "tsc",
+        "build": "esbuild main.ts --bundle --external:obsidian --format=cjs --target=es2018 --outfile=main.js"
+    },
+    "devDependencies": {
+        "esbuild": "0.19.5",
+        "obsidian": "1.4.11",
+        "typescript": "5.2.2"
+    }
+}

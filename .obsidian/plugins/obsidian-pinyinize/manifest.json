@@ -1,0 +1,10 @@
+{
+    "id": "obsidian-pinyinize",
+    "name": "Pinyinize",
+    "version": "0.1.0",
+    "minAppVersion": "0.15.0",
+    "description": "Annote chinese sentenses with pinyin",
+    "author": "Kodai Matsumoto",
+    "authorUrl": "https://github.com/0918nobita",
+    "isDesktopOnly": false
+}
