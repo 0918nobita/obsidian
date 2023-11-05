@@ -2,7 +2,7 @@
     "private": true,
     "name": "@0918nobita/obsidian-pinyinize",
     "version": "0.1.0",
-    "description": "Annote chinese sentenses with pinyin",
+    "description": "Annote chinese sentences with pinyin",
     "author": "Kodai Matsumoto <nobita.0918@gmail.com>",
     "main": "main.js",
     "scripts": {

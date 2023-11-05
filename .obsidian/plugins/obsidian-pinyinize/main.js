@@ -24,9 +24,24 @@ __export(main_exports, {
 });
 module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
+function annotate(parentNode, oldText) {
+  console.log(oldText.textContent.match(/zn_(.*?)_ch/g));
+}
 var MyPlugin = class extends import_obsidian.Plugin {
   async onload() {
     new import_obsidian.Notice("Hello from my Obsidian plugin!");
+    this.registerMarkdownPostProcessor((element, _context) => {
+      const children = [...element.childNodes];
+      for (const child of children) {
+        const nodes = [...child.childNodes];
+        for (const node of nodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node;
+            annotate(child, text);
+          }
+        }
+      }
+    });
   }
   onunload() {
   }

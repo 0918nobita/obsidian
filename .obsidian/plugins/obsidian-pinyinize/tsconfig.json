@@ -11,7 +11,7 @@
     // "disableReferencedProjectLoad": true,             /* TypeScript によって自動的に読み込まれるプロジェクトの数を減らします。 */
 
     /* 言語と環境 */
-    "target": "es2016",                                  /* 生成された JavaScript の JavaScript 言語バージョンを設定し、互換性のあるライブラリ宣言を含めます。 */
+    "target": "es2018",                                  /* 生成された JavaScript の JavaScript 言語バージョンを設定し、互換性のあるライブラリ宣言を含めます。 */
     // "lib": [],                                        /* ターゲットのランタイム環境を記述する、バンドルされたライブラリ宣言ファイルのセットを指定します。 */
     // "jsx": "preserve",                                /* 生成済みの JSX コードを指定します。 */
     // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
