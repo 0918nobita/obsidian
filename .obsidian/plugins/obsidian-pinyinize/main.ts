@@ -1,34 +1,29 @@
-import { Notice, Plugin } from 'obsidian';
-
-function annotate(parentNode: Node, oldText: Text) {
-    // const chineseSentence = oldText.textContent!.replace(/zn_(.*?)_ch/g, (_matched, group: string) => group.toUpperCase());
-    // const newNode = document.createElement('span');
-    // newNode.textContent = chineseSentence;
-    // newNode.style.color = 'yellow';
-    // parentNode.replaceChild(newNode, oldText);
-    console.log(oldText.textContent!.match(/zn_(.*?)_ch/g));
-}
+import { Plugin } from 'obsidian';
+import { html } from 'pinyin-pro';
 
 export default class MyPlugin extends Plugin {
     async onload() {
-        new Notice('Hello from my Obsidian plugin!');
-        
-        this.registerMarkdownPostProcessor((element, _context) => {
-            const children = [...element.childNodes];
+        this.registerMarkdownCodeBlockProcessor('zh-cn', (source, element, _context) => {
+            const container = element.createEl('div');
+            container.className = 'pinyinize-container';
 
-            for (const child of children) {
-                // TODO: find text nodes recursively
-                const nodes = [...child.childNodes];
+            const text = container.createEl('div');
 
-                for (const node of nodes) {
-                    if (node.nodeType === Node.TEXT_NODE) {
-                        const text = node as Text;
-                        annotate(child, text);
-                    }
-                }
-            }
+            const pinyinBlock = html(source, {
+                resultClass: 'pinyinize-result',
+                pinyinClass: 'pinyinize-pinyin',
+                chineseClass: 'pinyinize-chinese',
+            });
+
+            text.innerHTML = pinyinBlock;
+
+            const button = container.createEl('button');
+            button.className = 'pinyinize-copy-button';
+            button.textContent = 'Copy';
+
+            button.addEventListener('click', () => {
+                void navigator.clipboard.writeText(source);
+            });
         });
     }
-
-    onunload() {}
 }

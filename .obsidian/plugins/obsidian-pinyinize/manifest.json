@@ -3,7 +3,7 @@
     "name": "Pinyinize",
     "version": "0.1.0",
     "minAppVersion": "0.15.0",
-    "description": "Annote chinese sentences with pinyin",
+    "description": "Annotate chinese sentences with pinyin",
     "author": "Kodai Matsumoto",
     "authorUrl": "https://github.com/0918nobita",
     "isDesktopOnly": false

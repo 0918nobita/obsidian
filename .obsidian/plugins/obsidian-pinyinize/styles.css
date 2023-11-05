@@ -1,0 +1,24 @@
+.pinyinize-container {
+    position: relative;
+}
+
+.pinyinize-result {
+    margin: 0 0.1em;
+}
+
+.pinyinize-pinyin {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.pinyinize-container:hover .pinyinize-pinyin {
+    opacity: 1;
+}
+
+.pinyinize-copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
