@@ -25298,12 +25298,11 @@ function pinyin(word, options) {
 }
 
 // pininize.css.ts
-var charBlock = "pininize_charBlock__e1f6gf3";
-var chineseChar = "pininize_chineseChar__e1f6gf5";
+var charBlock = "pininize_charBlock__e1f6gf2";
+var chineseChar = "pininize_chineseChar__e1f6gf4";
 var container = "pininize_container__e1f6gf0";
-var copyButton = "pininize_copyButton__e1f6gf1";
-var pinyin2 = "pininize_pinyin__e1f6gf4";
-var sentence = "pininize_sentence__e1f6gf2";
+var pinyin2 = "pininize_pinyin__e1f6gf3";
+var sentence = "pininize_sentence__e1f6gf1";
 
 // main.ts
 var MyPlugin = class extends import_obsidian.Plugin {
@@ -25324,15 +25323,6 @@ var MyPlugin = class extends import_obsidian.Plugin {
         chineseChar2.className = chineseChar;
         chineseChar2.textContent = data.origin;
       }
-      const copyButton2 = container2.createEl("div");
-      copyButton2.role = "button";
-      copyButton2.className = copyButton;
-      copyButton2.textContent = "Copy";
-      copyButton2.addEventListener("click", () => {
-        void navigator.clipboard.writeText(source).then(() => {
-          new import_obsidian.Notice("Copied to your clipboard");
-        });
-      });
     });
   }
 };

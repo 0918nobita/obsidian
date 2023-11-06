@@ -1,4 +1,4 @@
-import { Notice, Plugin } from 'obsidian';
+import { Plugin } from 'obsidian';
 import { pinyin } from 'pinyin-pro';
 
 import * as styles from './pininize.css';
@@ -26,17 +26,6 @@ export default class MyPlugin extends Plugin {
                 chineseChar.className = styles.chineseChar;
                 chineseChar.textContent = data.origin;
             }
-
-            const copyButton = container.createEl('div');
-            copyButton.role = 'button';
-            copyButton.className = styles.copyButton;
-            copyButton.textContent = 'Copy';
-
-            copyButton.addEventListener('click', () => {
-                void navigator.clipboard.writeText(source).then(() => {
-                    new Notice('Copied to your clipboard');
-                });
-            });
         });
     }
 }
