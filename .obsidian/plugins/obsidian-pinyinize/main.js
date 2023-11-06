@@ -24957,8 +24957,8 @@ var DoubleUnicodePrefixReg = /^[\uD800-\uDBFF]$/;
 var DoubleUnicodeSuffixReg = /^[\uDC00-\uDFFF]$/;
 var getSingleWordPinyin = (word) => {
   const wordCode = word.charCodeAt(0);
-  const pinyin2 = DICT1[wordCode];
-  return pinyin2 ? pinyin2.split(" ")[0] : word;
+  const pinyin3 = DICT1[wordCode];
+  return pinyin3 ? pinyin3.split(" ")[0] : word;
 };
 var getPinyin = (word, list, mode) => {
   const matches = ACNormal.search(word, mode === "surname");
@@ -24990,27 +24990,27 @@ var getPinyin = (word, list, mode) => {
       matchIndex++;
     } else {
       const char = word[i];
-      const pinyin2 = getSingleWordPinyin(char);
+      const pinyin3 = getSingleWordPinyin(char);
       list[i] = {
         origin: char,
-        result: pinyin2,
-        isZh: pinyin2 !== char,
-        originPinyin: pinyin2
+        result: pinyin3,
+        isZh: pinyin3 !== char,
+        originPinyin: pinyin3
       };
       i++;
     }
   }
   return list;
 };
-var getPinyinWithoutTone = (pinyin2) => {
-  return pinyin2.replace(/(ā|á|ǎ|à)/g, "a").replace(/(ō|ó|ǒ|ò)/g, "o").replace(/(ē|é|ě|è)/g, "e").replace(/(ī|í|ǐ|ì)/g, "i").replace(/(ū|ú|ǔ|ù)/g, "u").replace(/(ǖ|ǘ|ǚ|ǜ)/g, "\xFC").replace(/(ń|ň|ǹ)/g, "n").replace(/ḿ|m̀/g, "m");
+var getPinyinWithoutTone = (pinyin3) => {
+  return pinyin3.replace(/(ā|á|ǎ|à)/g, "a").replace(/(ō|ó|ǒ|ò)/g, "o").replace(/(ē|é|ě|è)/g, "e").replace(/(ī|í|ǐ|ì)/g, "i").replace(/(ū|ú|ǔ|ù)/g, "u").replace(/(ǖ|ǘ|ǚ|ǜ)/g, "\xFC").replace(/(ń|ň|ǹ)/g, "n").replace(/ḿ|m̀/g, "m");
 };
 var getMultiplePinyin = (word, mode = "normal") => {
   const wordCode = word.charCodeAt(0);
   const customDict2 = getCustomDict();
-  const pinyin2 = customDict2[word] || (mode === "surname" ? Surnames[word] : "") || DICT1[wordCode] || "";
-  if (pinyin2) {
-    return pinyin2.split(" ").map((value) => ({
+  const pinyin3 = customDict2[word] || (mode === "surname" ? Surnames[word] : "") || DICT1[wordCode] || "";
+  if (pinyin3) {
+    return pinyin3.split(" ").map((value) => ({
       origin: word,
       result: value,
       isZh: true,
@@ -25027,8 +25027,8 @@ var getMultiplePinyin = (word, mode = "normal") => {
     ];
   }
 };
-var getInitialAndFinal = (pinyin2) => {
-  const pinyin_arr = pinyin2.split(" ");
+var getInitialAndFinal = (pinyin3) => {
+  const pinyin_arr = pinyin3.split(" ");
   const initial_arr = [];
   const final_arr = [];
   for (let _pinyin of pinyin_arr) {
@@ -25050,8 +25050,8 @@ var getInitialAndFinal = (pinyin2) => {
     // 声母
   };
 };
-var getFinalParts = (pinyin2) => {
-  const { final } = getInitialAndFinal(pinyin2);
+var getFinalParts = (pinyin3) => {
+  const { final } = getInitialAndFinal(pinyin3);
   let head = "", body = "", tail = "";
   if (doubleFinalList.indexOf(getPinyinWithoutTone(final)) !== -1) {
     head = final[0];
@@ -25063,14 +25063,14 @@ var getFinalParts = (pinyin2) => {
   }
   return { head, body, tail };
 };
-var getNumOfTone = (pinyin2) => {
+var getNumOfTone = (pinyin3) => {
   const reg_tone1 = /(ā|ō|ē|ī|ū|ǖ)/;
   const reg_tone2 = /(á|ó|é|í|ú|ǘ|ń|ḿ)/;
   const reg_tone3 = /(ǎ|ǒ|ě|ǐ|ǔ|ǚ|ň)/;
   const reg_tone4 = /(à|ò|è|ì|ù|ǜ|ǹ|m̀)/;
   const reg_tone0 = /(a|o|e|i|u|ü|n)/;
   const tone_num_arr = [];
-  const pinyin_arr = pinyin2.split(" ");
+  const pinyin_arr = pinyin3.split(" ");
   pinyin_arr.forEach((_pinyin) => {
     if (reg_tone1.test(_pinyin)) {
       tone_num_arr.push("1");
@@ -25088,8 +25088,8 @@ var getNumOfTone = (pinyin2) => {
   });
   return tone_num_arr.join(" ");
 };
-var getPinyinWithNum = (pinyin2, originPinyin) => {
-  const pinyin_arr = getPinyinWithoutTone(pinyin2).split(" ");
+var getPinyinWithNum = (pinyin3, originPinyin) => {
+  const pinyin_arr = getPinyinWithoutTone(pinyin3).split(" ");
   const tone_num_arr = getNumOfTone(originPinyin).split(" ");
   const res_arr = [];
   pinyin_arr.forEach((item, index) => {
@@ -25097,11 +25097,11 @@ var getPinyinWithNum = (pinyin2, originPinyin) => {
   });
   return res_arr.join(" ");
 };
-var getFirstLetter = (pinyin2) => {
+var getFirstLetter = (pinyin3) => {
   const first_letter_arr = [];
-  const pinyin_arr = pinyin2.split(" ");
-  pinyin_arr.forEach((pinyin3) => {
-    first_letter_arr.push(pinyin3[0]);
+  const pinyin_arr = pinyin3.split(" ");
+  pinyin_arr.forEach((pinyin4) => {
+    first_letter_arr.push(pinyin4[0]);
   });
   return first_letter_arr.join(" ");
 };
@@ -25219,12 +25219,12 @@ var middlewareType = (list, options, word) => {
   }
   if (options.type === "all") {
     return list.map((item) => {
-      const pinyin2 = item.isZh ? item.result : "";
-      const { initial, final } = getInitialAndFinal(pinyin2);
-      const { head, body, tail } = getFinalParts(pinyin2);
+      const pinyin3 = item.isZh ? item.result : "";
+      const { initial, final } = getInitialAndFinal(pinyin3);
+      const { head, body, tail } = getFinalParts(pinyin3);
       return {
         origin: item.origin,
-        pinyin: pinyin2,
+        pinyin: pinyin3,
         initial,
         final,
         first: item.isZh ? getFirstLetter(item.result) : "",
@@ -25296,57 +25296,46 @@ function pinyin(word, options) {
   middlewareV(list, options);
   return middlewareType(list, options, word);
 }
-var DefaultHtmlOptions = {
-  resultClass: "py-result-item",
-  chineseClass: "py-chinese-item",
-  pinyinClass: "py-pinyin-item",
-  nonChineseClass: "py-non-chinese-item",
-  wrapNonChinese: false,
-  toneType: "symbol"
-};
-var html = (text, options) => {
-  const completeOptions = Object.assign(Object.assign({}, DefaultHtmlOptions), options || {});
-  const pinyinArray = pinyin(text, {
-    type: "all",
-    toneType: completeOptions.toneType
-  });
-  const result = pinyinArray.map((item) => {
-    if (item.isZh) {
-      const resultClass = completeOptions.resultClass;
-      const chineseClass = completeOptions.chineseClass;
-      const pinyinClass = completeOptions.pinyinClass;
-      return `<span class="${resultClass}"><ruby><span class="${chineseClass}">${item.origin}</span><rp>(</rp><rt class="${pinyinClass}">${item.pinyin}</rt><rp>)</rp></ruby></span>`;
-    } else {
-      if (completeOptions.wrapNonChinese) {
-        const nonChineseClass = completeOptions.nonChineseClass;
-        return `<span class="${nonChineseClass}">${item.origin}</span>`;
-      } else {
-        return item.origin;
-      }
-    }
-  });
-  return result.join("");
-};
+
+// pininize.css.ts
+var charBlock = "pininize_charBlock__e1f6gf4";
+var chineseChar = "pininize_chineseChar__e1f6gf6";
+var container = "pininize_container__e1f6gf0";
+var control = "pininize_control__e1f6gf1";
+var copyButton = "pininize_copyButton__e1f6gf2";
+var pinyin2 = "pininize_pinyin__e1f6gf5";
+var sentence = "pininize_sentence__e1f6gf3";
 
 // main.ts
 var MyPlugin = class extends import_obsidian.Plugin {
   async onload() {
     this.registerMarkdownCodeBlockProcessor("zh-cn", (source, element, _context) => {
-      const container = element.createEl("div");
-      container.className = "pinyinize-container";
-      const text = container.createEl("div");
-      const pinyinBlock = html(source, {
-        resultClass: "pinyinize-result",
-        pinyinClass: "pinyinize-pinyin",
-        chineseClass: "pinyinize-chinese"
+      const container2 = element.createEl("div");
+      container2.className = container;
+      const control2 = container2.createEl("div");
+      control2.className = control;
+      const copyButton2 = control2.createEl("div");
+      copyButton2.role = "button";
+      copyButton2.className = copyButton;
+      copyButton2.textContent = "Copy";
+      copyButton2.addEventListener("click", () => {
+        void navigator.clipboard.writeText(source).then(() => {
+          new import_obsidian.Notice("Copied to your clipboard");
+        });
       });
-      text.innerHTML = pinyinBlock;
-      const button = container.createEl("button");
-      button.className = "pinyinize-copy-button";
-      button.textContent = "Copy";
-      button.addEventListener("click", () => {
-        void navigator.clipboard.writeText(source);
-      });
+      const sentence2 = container2.createEl("div");
+      sentence2.className = sentence;
+      const allData = pinyin(source, { type: "all" });
+      for (const data of allData) {
+        const charBlock2 = sentence2.createEl("div");
+        charBlock2.className = charBlock;
+        const pinyin3 = charBlock2.createEl("span");
+        pinyin3.className = pinyin2;
+        pinyin3.textContent = data.pinyin;
+        const chineseChar2 = charBlock2.createEl("span");
+        chineseChar2.className = chineseChar;
+        chineseChar2.textContent = data.origin;
+      }
     });
   }
 };
