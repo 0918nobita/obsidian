@@ -19,7 +19,7 @@ export const sentence = style({
     flexGrow: '1',
     display: 'flex',
     flexWrap: 'wrap',
-    columnGap: '0.5em',
+    columnGap: '0.2em',
 });
 
 export const charBlock = style({
