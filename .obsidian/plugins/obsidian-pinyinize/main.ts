@@ -9,20 +9,6 @@ export default class MyPlugin extends Plugin {
             const container = element.createEl('div');
             container.className = styles.container;
 
-            const control = container.createEl('div');
-            control.className = styles.control;
-
-            const copyButton = control.createEl('div');
-            copyButton.role = 'button';
-            copyButton.className = styles.copyButton;
-            copyButton.textContent = 'Copy';
-
-            copyButton.addEventListener('click', () => {
-                void navigator.clipboard.writeText(source).then(() => {
-                    new Notice('Copied to your clipboard');
-                });
-            });
-
             const sentence = container.createEl('div');
             sentence.className = styles.sentence;
 
@@ -40,6 +26,17 @@ export default class MyPlugin extends Plugin {
                 chineseChar.className = styles.chineseChar;
                 chineseChar.textContent = data.origin;
             }
+
+            const copyButton = container.createEl('div');
+            copyButton.role = 'button';
+            copyButton.className = styles.copyButton;
+            copyButton.textContent = 'Copy';
+
+            copyButton.addEventListener('click', () => {
+                void navigator.clipboard.writeText(source).then(() => {
+                    new Notice('Copied to your clipboard');
+                });
+            });
         });
     }
 }

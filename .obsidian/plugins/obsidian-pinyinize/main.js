@@ -25298,13 +25298,12 @@ function pinyin(word, options) {
 }
 
 // pininize.css.ts
-var charBlock = "pininize_charBlock__e1f6gf4";
-var chineseChar = "pininize_chineseChar__e1f6gf6";
+var charBlock = "pininize_charBlock__e1f6gf3";
+var chineseChar = "pininize_chineseChar__e1f6gf5";
 var container = "pininize_container__e1f6gf0";
-var control = "pininize_control__e1f6gf1";
-var copyButton = "pininize_copyButton__e1f6gf2";
-var pinyin2 = "pininize_pinyin__e1f6gf5";
-var sentence = "pininize_sentence__e1f6gf3";
+var copyButton = "pininize_copyButton__e1f6gf1";
+var pinyin2 = "pininize_pinyin__e1f6gf4";
+var sentence = "pininize_sentence__e1f6gf2";
 
 // main.ts
 var MyPlugin = class extends import_obsidian.Plugin {
@@ -25312,17 +25311,6 @@ var MyPlugin = class extends import_obsidian.Plugin {
     this.registerMarkdownCodeBlockProcessor("zh-cn", (source, element, _context) => {
       const container2 = element.createEl("div");
       container2.className = container;
-      const control2 = container2.createEl("div");
-      control2.className = control;
-      const copyButton2 = control2.createEl("div");
-      copyButton2.role = "button";
-      copyButton2.className = copyButton;
-      copyButton2.textContent = "Copy";
-      copyButton2.addEventListener("click", () => {
-        void navigator.clipboard.writeText(source).then(() => {
-          new import_obsidian.Notice("Copied to your clipboard");
-        });
-      });
       const sentence2 = container2.createEl("div");
       sentence2.className = sentence;
       const allData = pinyin(source, { type: "all" });
@@ -25336,6 +25324,15 @@ var MyPlugin = class extends import_obsidian.Plugin {
         chineseChar2.className = chineseChar;
         chineseChar2.textContent = data.origin;
       }
+      const copyButton2 = container2.createEl("div");
+      copyButton2.role = "button";
+      copyButton2.className = copyButton;
+      copyButton2.textContent = "Copy";
+      copyButton2.addEventListener("click", () => {
+        void navigator.clipboard.writeText(source).then(() => {
+          new import_obsidian.Notice("Copied to your clipboard");
+        });
+      });
     });
   }
 };

@@ -1,8 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
-export const container = style({});
-
-export const control = style({});
+export const container = style({
+    display: 'flex',
+});
 
 export const copyButton = style({
     display: 'inline-block',
@@ -16,6 +16,7 @@ export const copyButton = style({
 });
 
 export const sentence = style({
+    flexGrow: '1',
     display: 'flex',
     flexWrap: 'wrap',
     columnGap: '0.5em',
@@ -29,9 +30,10 @@ export const charBlock = style({
 });
 
 export const pinyin = style({
-    opacity: '0',
     fontSize: '0.8em',
+    textAlign: 'center',
     transition: 'opacity .3s ease',
+    opacity: '0',
     selectors: {
         [`${container}:hover &`]: {
             opacity: '1',
