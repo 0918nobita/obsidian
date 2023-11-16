@@ -3,7 +3,7 @@
   "hasMigratedDailyNoteSettings": true,
   "hasMigratedWeeklyNoteSettings": false,
   "daily": {
-    "folder": "1-Daily",
+    "folder": "Daily",
     "template": "Template/Daily Note.md",
     "enabled": true
   },
@@ -11,24 +11,24 @@
     "format": "",
     "template": "0-Template/Weekly Note.md",
     "folder": "2-Weekly",
-    "enabled": true
+    "enabled": false
   },
   "monthly": {
     "format": "",
     "template": "Template/Monthly Note.md",
     "folder": "3-Monthly",
-    "enabled": true
+    "enabled": false
   },
   "quarterly": {
     "format": "",
     "template": "0-Template/Quarterly Note.md",
     "folder": "4-Quarterly",
-    "enabled": true
+    "enabled": false
   },
   "yearly": {
     "format": "",
     "template": "0-Template/Yearly Note.md",
     "folder": "5-Yearly",
-    "enabled": true
+    "enabled": false
   }
 }
