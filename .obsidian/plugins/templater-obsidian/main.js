@@ -3643,7 +3643,9 @@ var Templater = class {
     const doc = editor.getDoc();
     const oldSelections = doc.listSelections();
     doc.replaceSelection(output_content);
-    await app.vault.modify(active_editor.file, editor.getValue());
+    if (active_view) {
+      await active_view.save();
+    }
     app.workspace.trigger("templater:template-appended", {
       view: active_view,
       editor: active_editor,

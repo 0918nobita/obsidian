@@ -34,7 +34,11 @@ __export(main_exports, {
 
 module.exports = __toCommonJS(main_exports);
 
-var import_obsidian8 = require("obsidian"), DEFAULT_SETTINGS = {
+var import_obsidian8 = require("obsidian"), enumShowListIn = {
+  "": "Sidebar",
+  CURRENT_PANE: "Current pane",
+  SPLIT_PANE: "New pane"
+}, DEFAULT_SETTINGS = {
   displayMethod: "NAME",
   alwaysOpen: false,
   ignoreDocTags: "",
@@ -75,7 +79,8 @@ var import_obsidian8 = require("obsidian"), DEFAULT_SETTINGS = {
     }
   },
   linkShowOnlyFDR: true,
-  linkCombineOtherTree: true
+  linkCombineOtherTree: true,
+  showListIn: ""
 }, VIEW_TYPE_SCROLL = "tagfolder-view-scroll", EPOCH_MINUTE = 60, EPOCH_HOUR = 60 * EPOCH_MINUTE, EPOCH_DAY = 24 * EPOCH_HOUR, FRESHNESS_1 = "FRESHNESS_01", FRESHNESS_2 = "FRESHNESS_02", FRESHNESS_3 = "FRESHNESS_03", FRESHNESS_4 = "FRESHNESS_04", FRESHNESS_5 = "FRESHNESS_05", tagDispDict = {
   FRESHNESS_01: "🕐",
   FRESHNESS_02: "📖",
@@ -1946,7 +1951,7 @@ function get_each_context2(ctx, list, i) {
 
 function get_each_context_1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[69] = list[i];
+  child_ctx[71] = list[i];
   return child_ctx;
 }
 
@@ -1958,10 +1963,10 @@ function get_each_context_2(ctx, list, i) {
 
 function get_each_context_3(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[74] = list[i][0];
+  child_ctx[76] = list[i][0];
   child_ctx[0] = list[i][1];
   child_ctx[1] = list[i][2];
-  child_ctx[75] = list[i][3];
+  child_ctx[77] = list[i][3];
   return child_ctx;
 }
 
@@ -1995,7 +2000,7 @@ function create_else_block(ctx) {
     p(ctx2, dirty) {
       const ondemandrender_changes = {};
       if (33554448 & dirty[0]) ondemandrender_changes.cssClass = `tree-item-self${!ctx2[4] ? " is-clickable mod-collapsible" : ""} nav-folder-title tag-folder-title${ctx2[25] ? " is-active" : ""}`;
-      if (96616584 & dirty[0] | 65536 & dirty[2]) ondemandrender_changes.$$scope = {
+      if (96616584 & dirty[0] | 262144 & dirty[2]) ondemandrender_changes.$$scope = {
         dirty,
         ctx: ctx2
       };
@@ -2334,9 +2339,9 @@ function create_each_block_3(ctx) {
   v2treefoldercomponent = new V2TreeFolderComponent({
     props: {
       viewType: ctx[2],
-      items: ctx[75],
-      thisName: ctx[74],
-      trail: [ ...ctx[3], ...ctx[16], ctx[74] ],
+      items: ctx[77],
+      thisName: ctx[76],
+      trail: [ ...ctx[3], ...ctx[16], ctx[76] ],
       folderIcon: ctx[7],
       openFile: ctx[10],
       isRoot: false,
@@ -2360,9 +2365,9 @@ function create_each_block_3(ctx) {
     p(ctx2, dirty) {
       const v2treefoldercomponent_changes = {};
       if (4 & dirty[0]) v2treefoldercomponent_changes.viewType = ctx2[2];
-      if (262144 & dirty[0]) v2treefoldercomponent_changes.items = ctx2[75];
-      if (262144 & dirty[0]) v2treefoldercomponent_changes.thisName = ctx2[74];
-      if (327688 & dirty[0]) v2treefoldercomponent_changes.trail = [ ...ctx2[3], ...ctx2[16], ctx2[74] ];
+      if (262144 & dirty[0]) v2treefoldercomponent_changes.items = ctx2[77];
+      if (262144 & dirty[0]) v2treefoldercomponent_changes.thisName = ctx2[76];
+      if (327688 & dirty[0]) v2treefoldercomponent_changes.trail = [ ...ctx2[3], ...ctx2[16], ctx2[76] ];
       if (128 & dirty[0]) v2treefoldercomponent_changes.folderIcon = ctx2[7];
       if (1024 & dirty[0]) v2treefoldercomponent_changes.openFile = ctx2[10];
       if (512 & dirty[0]) v2treefoldercomponent_changes.showMenu = ctx2[9];
@@ -2449,7 +2454,7 @@ function create_each_block_1(ctx) {
   let treeitemitemcomponent, current;
   treeitemitemcomponent = new V2TreeItemComponent_default({
     props: {
-      item: ctx[69],
+      item: ctx[71],
       openFile: ctx[10],
       trail: ctx[4] ? [ ...ctx[3] ] : [ ...ctx[3], ...ctx[16] ],
       showMenu: ctx[9],
@@ -2466,7 +2471,7 @@ function create_each_block_1(ctx) {
     },
     p(ctx2, dirty) {
       const treeitemitemcomponent_changes = {};
-      if (524288 & dirty[0]) treeitemitemcomponent_changes.item = ctx2[69];
+      if (524288 & dirty[0]) treeitemitemcomponent_changes.item = ctx2[71];
       if (1024 & dirty[0]) treeitemitemcomponent_changes.openFile = ctx2[10];
       if (65560 & dirty[0]) treeitemitemcomponent_changes.trail = ctx2[4] ? [ ...ctx2[3] ] : [ ...ctx2[3], ...ctx2[16] ];
       if (512 & dirty[0]) treeitemitemcomponent_changes.showMenu = ctx2[9];
@@ -2650,9 +2655,9 @@ function splitArrayToBatch(items) {
 
 function instance5($$self, $$props, $$invalidate) {
   let filename, trailKey, collapsed, sortFunc, trailLower, isActive, classKey, tagsDispHtml, itemCount, draggable, $tagFolderSetting, $v2expandedTags;
-  component_subscribe($$self, tagFolderSetting, ($$value => $$invalidate(60, $tagFolderSetting = $$value)));
+  component_subscribe($$self, tagFolderSetting, ($$value => $$invalidate(61, $tagFolderSetting = $$value)));
   component_subscribe($$self, v2expandedTags, ($$value => $$invalidate(51, $v2expandedTags = $$value)));
-  var _a, _b;
+  var _a, _b, _c;
   let {viewType = "tags"} = $$props, {thisName = ""} = $$props, {items = []} = $$props, _items = [], {tagName = ""} = $$props, {tagNameDisp = []} = $$props, {trail = []} = $$props, {isRoot} = $$props, {isMainTree} = $$props, {depth = 1} = $$props, {folderIcon = ""} = $$props, {headerTitle = ""} = $$props, {showMenu} = $$props, {openFile} = $$props, {hoverPreview} = $$props, {openScrollView} = $$props;
   v2expandedTags.subscribe((expTags => {
     if (null == trailKey) return;
@@ -2677,7 +2682,9 @@ function instance5($$self, $$props, $$invalidate) {
     if ("tags" == viewType) openScrollView(null, "", joinPartialPath(removeIntermediatePath(trails)).join(", "), filePaths); else if ("links" == viewType) openScrollView(null, "", `Linked to ${filename}`, filePaths);
     e.preventDefault();
   }
-  let thisInfo, tags = [], isInDedicatedTag = false, previousTrail = "", isSuppressibleLevel = false, suppressLevels = [], children2 = [], childrenDisp = [], leftOverItems = [], leftOverItemsDisp = [], tagsDisp = [], thisLinks = [], linkedItems = new Map, _lastParam = {}, isUpdating = false, isFolderVisible = false, queueLeftOverItems = [], batchedLeftOverItems = [];
+  let thisInfo, tags = [], isInDedicatedTag = false, previousTrail = "", isSuppressibleLevel = false, suppressLevels = [], children2 = [], childrenDisp = [], leftOverItems = [], leftOverItemsDisp = [], tagsDisp = [], thisLinks = [], linkedItems = new Map, _lastParam = {}, isUpdating = false;
+  const viewContextID = `${null !== (_b = getContext("viewID")) && void 0 !== _b ? _b : ""}`;
+  let isFolderVisible = false, queueLeftOverItems = [], batchedLeftOverItems = [];
   async function applyLeftOverItems(items2) {
     if (0 == batchedLeftOverItems.length) if (0 == leftOverItemsDisp.length) try {
       const allOfBatch = splitArrayToBatch(items2);
@@ -2871,7 +2878,7 @@ function instance5($$self, $$props, $$invalidate) {
         }));
       }
     })({
-      key: trailKey + (isRoot ? "-r" : "-x"),
+      key: trailKey + (isRoot ? "-r" : "-x") + viewContextID,
       expandLimit,
       depth,
       tags,
@@ -2896,7 +2903,7 @@ function instance5($$self, $$props, $$invalidate) {
     if (98306 & $$self.$$.dirty[0] | 1024 & $$self.$$.dirty[1]) if (isSuppressibleLevel && isInDedicatedTag) $$invalidate(44, tagsDisp = [ [ ...tagNameDisp, ...suppressLevels.flatMap((e => e.split("/").map((e2 => renderSpecialTag(e2))))) ] ]); else if (isSuppressibleLevel) $$invalidate(44, tagsDisp = [ tagNameDisp, ...suppressLevels.map((e => e.split("/").map((e2 => renderSpecialTag(e2))))) ]); else $$invalidate(44, tagsDisp = [ tagNameDisp ]);
     if (4 & $$self.$$.dirty[0]) $$invalidate(47, classKey = "links" == viewType ? " tf-link" : " tf-tag");
     if (131072 & $$self.$$.dirty[0] | 73728 & $$self.$$.dirty[1]) $$invalidate(24, tagsDispHtml = isFolderVisible ? tagsDisp.map((e => `<span class="tagfolder-tag tag-tag${classKey}">${e.map((ee => `<span class="tf-tag-each">${escapeStringToHTML(ee)}</span>`)).join("")}</span>`)).join("") : "");
-    if (16388 & $$self.$$.dirty[0] | 4360 & $$self.$$.dirty[1]) $$invalidate(23, itemCount = "tags" == viewType ? null !== $$invalidate(34, _b = null == _items ? void 0 : _items.length) && void 0 !== _b ? _b : 0 : tags.length + leftOverItems.length);
+    if (16388 & $$self.$$.dirty[0] | 4360 & $$self.$$.dirty[1]) $$invalidate(23, itemCount = "tags" == viewType ? null !== $$invalidate(34, _c = null == _items ? void 0 : _items.length) && void 0 !== _c ? _c : 0 : tags.length + leftOverItems.length);
     if (4096 & $$self.$$.dirty[1]) applyLeftOverItems(leftOverItems);
     if (2048 & $$self.$$.dirty[1]) applyChildren(children2);
     if (16 & $$self.$$.dirty[1]) $$invalidate(22, draggable = !_setting.disableDragging);
@@ -2934,7 +2941,7 @@ function instance5($$self, $$props, $$invalidate) {
       evt.stopPropagation();
       openFile(filename, evt.metaKey || evt.ctrlKey);
     }
-  }, thisName, _a, _b, _setting, expandLimit, _tagInfo, _currentActiveFilePath, tags, previousTrail, isSuppressibleLevel, children2, leftOverItems, tagsDisp, thisLinks, thisInfo, classKey, sortFunc, trailLower, trailKey, $v2expandedTags, e => handleOpenScroll(e, trail, _items.map((e2 => e2.path))), function ondemandrender_isVisible_binding(value) {
+  }, thisName, _a, _c, _setting, expandLimit, _tagInfo, _currentActiveFilePath, tags, previousTrail, isSuppressibleLevel, children2, leftOverItems, tagsDisp, thisLinks, thisInfo, classKey, sortFunc, trailLower, trailKey, $v2expandedTags, e => handleOpenScroll(e, trail, _items.map((e2 => e2.path))), function ondemandrender_isVisible_binding(value) {
     isFolderVisible = value;
     $$invalidate(17, isFolderVisible);
   }, evt => {
@@ -3391,6 +3398,7 @@ function instance6($$self, $$props, $$invalidate) {
     observer.disconnect();
   }));
   let scrollParent, viewItems = [];
+  setContext("viewID", `${Math.random()}`);
   $$self.$$set = $$props2 => {
     if ("hoverPreview" in $$props2) $$invalidate(0, hoverPreview = $$props2.hoverPreview);
     if ("openFile" in $$props2) $$invalidate(1, openFile = $$props2.openFile);
@@ -4478,7 +4486,20 @@ var TagFolderPlugin5 = class extends import_obsidian8.Plugin {
     if (!theLeaf) {
       const parent = null == (_a = this.app.workspace.getLeavesOfType(VIEW_TYPE_TAGFOLDER)) ? void 0 : _a.first();
       if (!parent) return;
-      if (!import_obsidian8.Platform.isMobile) theLeaf = this.app.workspace.createLeafBySplit(parent, "horizontal", false); else theLeaf = this.app.workspace.getLeftLeaf(false);
+      switch (this.settings.showListIn) {
+       case "CURRENT_PANE":
+        theLeaf = this.app.workspace.getLeaf();
+        break;
+
+       case "SPLIT_PANE":
+        theLeaf = this.app.workspace.getLeaf("split", "horizontal");
+        break;
+
+       case "":
+       default:
+        if (!import_obsidian8.Platform.isMobile) theLeaf = this.app.workspace.createLeafBySplit(parent, "horizontal", false); else theLeaf = this.app.workspace.getLeftLeaf(false);
+        break;
+      }
     }
     const title = tags.map((e => e.split("/").map((ee => renderSpecialTag(ee))).join("/"))).join(" ");
     await theLeaf.setViewState({
@@ -4623,6 +4644,12 @@ var TagFolderPlugin5 = class extends import_obsidian8.Plugin {
     new import_obsidian8.Setting(containerEl).setName("List files in a separated pane").addToggle((toggle => {
       toggle.setValue(this.plugin.settings.useMultiPaneList).onChange((async value => {
         this.plugin.settings.useMultiPaneList = value;
+        await this.plugin.saveSettings();
+      }));
+    }));
+    new import_obsidian8.Setting(containerEl).setName("Show list in").setDesc("This option applies to the newly opened list").addDropdown((dropdown => {
+      dropdown.addOptions(enumShowListIn).setValue(this.plugin.settings.showListIn).onChange((async value => {
+        this.plugin.settings.showListIn = value;
         await this.plugin.saveSettings();
       }));
     }));
