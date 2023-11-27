@@ -1,4 +1,5 @@
 #デイリーノート
+<< [[<% tp.date.yesterday() %>]] | [[<% tp.date.tomorrow() %>]] >>
 ## ルーティン
 - [ ] 起床したら布団を畳む
 - [ ] Hello Chinese
