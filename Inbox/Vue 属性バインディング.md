@@ -1,6 +1,6 @@
 #vuejs
 prev: [[Vue 宣言的レンダリング]]
-next: [[Vue イベントリスナー]]
+next: [[Vue イベントリスナ]]
 
 mustaches (二重中括弧) はテキスト補完にのみ用いる。
 ```html

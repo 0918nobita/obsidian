@@ -1,4 +1,4 @@
-#vuejs
+#vuejs/options
 next: [[Vue 属性バインディング]]
 
 HTML を拡張したテンプレート構文を用いて、JavaScript の状態に基づいて HTML がどのように見えるかを記述することができる。
@@ -15,6 +15,6 @@ export default {
     return {
       message: 'Hello, world!',
     };
-  }
+  },
 };
 ```

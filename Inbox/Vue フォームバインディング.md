@@ -1,5 +1,5 @@
-#vuejs
-prev: [[Vue イベントリスナー]]
+#vuejs/options
+prev: [[Vue イベントリスナ]]
 next: [[Vue 条件付きレンダリング]]
 
 `v-bind` と `v-on` を同時に用いることで双方向 (two-way) バインディングが実現する。
@@ -18,7 +18,7 @@ export default {
     // v-on ハンドラはネイティブDOMのイベントを引数に取る
     onInput(e) {
       this.text = e.target.value;
-    }
+    },
   },
 };
 ```

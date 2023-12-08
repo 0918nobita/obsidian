@@ -1,4 +1,4 @@
-#vuejs 
+#vuejs/options 
 prev: [[Vue 属性バインディング]]
 next: [[Vue フォームバインディング]]
 
