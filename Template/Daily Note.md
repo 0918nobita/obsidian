@@ -5,11 +5,10 @@
 - [ ] Hello Chinese
 - [ ] Super Chinese
 - [ ] 日付が変わる前に布団に入る
-## 今日のTo Do 
-## 今日のハイライト
-## タスク
+## 今日やるべきタスク
 ```tasks
 not done
 scheduled on <% tp.date.now() %>
 sort by priority
 ```
+## 今日のハイライト
