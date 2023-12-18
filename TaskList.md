@@ -12,6 +12,7 @@ not done
 path does not include Template
 path includes 放送大学
 description includes 演習
+sort by due
 sort by priority
 ```
 ## 放送授業
@@ -20,5 +21,6 @@ not done
 path does not include Template
 path includes 放送大学
 description does not include 演習
+sort by due
 sort by priority
 ```

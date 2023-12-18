@@ -9,6 +9,12 @@
 ```tasks
 not done
 scheduled on <% tp.date.now() %>
+sort by due
 sort by priority
+```
+## 今日完了したタスク
+```tasks
+done on <% tp.date.now() %>
+path does not include Daily
 ```
 ## 今日のハイライト
