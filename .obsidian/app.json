@@ -10,5 +10,6 @@
   "newFileFolderPath": "/",
   "userIgnoreFilters": [
     "scripts/"
-  ]
+  ],
+  "alwaysUpdateLinks": true
 }
