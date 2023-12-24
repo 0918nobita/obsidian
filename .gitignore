@@ -1,4 +1,5 @@
-.obsidian/plugins
+.obsidian/plugins/*
+!zhongwen-block
 
 .obsidian/appearance.json
 
