@@ -2,7 +2,7 @@
   "promptDelete": false,
   "showLineNumber": false,
   "propertiesInDocument": "source",
-  "livePreview": false,
+  "livePreview": true,
   "autoPairMarkdown": false,
   "autoPairBrackets": false,
   "spellcheck": false,
