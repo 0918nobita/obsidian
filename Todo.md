@@ -4,3 +4,4 @@
 - [ ] obsidian-zhongwen-block の新レンダラで、漢字が連続するひと固まりごとにタッチして部分的にピンインを追加できる機能を追加する (表示状態を管理・通知するために RxJS を活用するが、メモリリークが怒らないように FinalizationGroup を活用する)
 	- https://qiita.com/uhyo/items/5dc97667ba90ce3941cd
 	- https://developer.mozilla.org/ja/docs/Web/API/Element/mouseenter_event
+- [ ] 2023年3月〜現在までの収支を記録・計算する ⏳ 2023-12-30 ➕ 2023-12-29 
