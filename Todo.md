@@ -1,5 +1,5 @@
 - [x] obsidian-zhongwen-block の新レンダラにおいて、CSS を書いてホバー時にのみピンインが表示されるようにする 🔽 ➕ 2023-12-05 ✅ 2023-12-25
-- [ ] obsidian-zhongwen-block の新レンダラにおいて、スクリーンリーダーのための設定を書き足す(aria-hidden 等) 🔽 ➕ 2023-12-05 
+- [x] obsidian-zhongwen-block の新レンダラにおいて、スクリーンリーダーのための設定を書き足す(aria-hidden 等) 🔽 ➕ 2023-12-05 ✅ 2023-12-30
 - [x] 今後の放送大学の受講計画をする ⏫ ➕ 2023-12-18 ⏳ 2023-12-18 📅 2023-12-18 ✅ 2023-12-18
 - [ ] obsidian-zhongwen-block の新レンダラで、漢字が連続するひと固まりごとにタッチして部分的にピンインを追加できる機能を追加する (表示状態を管理・通知するために RxJS を活用するが、メモリリークが怒らないように FinalizationGroup を活用する)
 	- https://qiita.com/uhyo/items/5dc97667ba90ce3941cd
