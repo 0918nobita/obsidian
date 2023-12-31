@@ -32,7 +32,13 @@ if (result.successful) {
         return acc;
     }, []);
 
-    console.log(changeInSavings);
+    dv.paragraph(`\`\`\`chart
+type: line
+labels: ${JSON.stringify(entries.map(([month]) => month))}
+series:
+  - title: 残高
+    data: ${JSON.stringify(changeInSavings)}
+\`\`\``);
 } else {
     dv.paragraph(`~~~~~\n${result.error}\n~~~~~`);
 }
