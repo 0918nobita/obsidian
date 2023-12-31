@@ -22,14 +22,17 @@ if (result.successful) {
         return 0;
     });
 
-    dv.paragraph(`\`\`\`chart
-type: bar
-labels: ${JSON.stringify(entries.map(([month]) => month))}
-series:
-  - title: 収支
-    data: ${JSON.stringify(entries.map(([, income]) => income))}
-beginAtZero: true
-\`\`\``);
+    const changeInSavings = entries.reduce((acc, [, income]) => {
+        if (acc.length === 0) {
+            acc.push(income);
+            return acc;
+        }
+
+        acc.push(acc[acc.length - 1] + income);
+        return acc;
+    }, []);
+
+    console.log(changeInSavings);
 } else {
     dv.paragraph(`~~~~~\n${result.error}\n~~~~~`);
 }
