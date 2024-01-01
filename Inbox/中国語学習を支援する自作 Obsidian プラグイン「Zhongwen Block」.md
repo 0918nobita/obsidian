@@ -35,6 +35,7 @@ Vault は「ノートの保管庫」を意味していて、実際には普通�
 
 Web フロントエンド (HTML, CSS, JavaScript) の知識があれば簡単に開発を始められます。
 プラグイン開発者向けのドキュメントが用意されています。
+
 https://docs.obsidian.md/Home
 
 プラグイン本体は、基本的には
@@ -94,15 +95,26 @@ export default defineConfig({
 
 今回は言語として `zh-cn` が指定されたコードブロックのレンダリング処理をこちらで定義したもので上書きする必要があるので、 `Plugin` 抽象クラスのインスタンスメソッド `registerMarkdownCodeBlockProcessor` を用いてレンダリング処理を登録します。
 
+https://docs.obsidian.md/Reference/TypeScript+API/Plugin/registerMarkdownCodeBlockProcessor
+
 第1引数で対象の言語を指定し、第2引数でレンダリングの際に呼び出されるコールバック関数を指定します。
+
+コールバック関数の引数：
+
+- 第1引数 `source`：コードブロック内に記述された内容 (`string`)
+- 第2引数 `el`：コードブロックと対応する要素を描画する起点となる `HTMLElement`
 
 ```typescript
 import { Plugin } from 'obsidian';
 
 export default class MyPlugin extends Plugin {
   async onload() {
-    this.registerMarkdownCodeBlockProcessor('zh-CN', (element, context) => {
-    });
+    this.registerMarkdownCodeBlockProcessor(
+      'zh-CN',
+      async (source, el) => {
+        // レンダリング処理
+      }
+    );
   }
 }
 ```
