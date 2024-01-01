@@ -13,15 +13,25 @@ tags:
 ---
 自分が Obsidian 上でノートを取りながら効率よく中国語を学ぶために、ノートアプリ Obsidian のための自作プラグイン「Zhongwen Block」を開発しています。今回は JavaScript/TypeScript, HTML, CSS にある程度馴染みのある人に向けて、このプラグインを開発するにあたって直面した問題やそれに対する自分なりの解決方法について紹介していきます。
 
-## Obsidian とは
+## Obsidian についての基礎知識
+
+### Obsidian とは
 
 Markdown 形式でノートを取り、個人の知識を管理するのに使うツールで、Electron アプリとして実装されています。Windows, macOS, Linux, Android, iOS で利用できます。
 ノート同士にリンクを張ることもでき、その関係をグラフ化する機能も備えています。
 さらにサードパーティ製プラグインを配布する仕組み (Community plugins) もあり、豊富なプラグインを簡単にインストールして自分好みにカスタマイズできます。
 
-## Obsidian Vault とは
+### Obsidian Vault とは
 
 Vault は「ノートの保管庫」を意味していて、実際には普通のディレクトリです。中にノートと対応する `.md` ファイルを配置します。`.obsidian` サブディレクトリには、設定を永続化するための `.json` ファイルやインストールされたプラグインが配置されています。
+
+## 今回実装したプラグインの概要
+
+今回実装した Obsidian プラグインは「`zh-cn` コードブロック内に記述した中国語の文に対して、自動でルビとしてピンイン (漢字に対する補助的な発音表記) を追加表示する」機能を持ちます。
+
+![画面録画](https://github.com/0918nobita/obsidian-zhongwen-block/blob/main/images/screen-recording.gif?raw=true)
+
+デフォルト設定ではピンインはマウスホバー時にのみ表示されます。これは、極力ピンインに頼らずに漢字だけを見て発音できるようになるべき、という考えに基づいた挙動です。もちろん設定を変更すればピンインを常時表示するようにもできます。
 
 ## Obsidian のプラグインの作り方
 
@@ -48,17 +58,15 @@ https://docs.obsidian.md/Home
 
 プラグイン開発のための API に関しては、 `obsidian` npm パッケージで TypeScript の型定義付きで提供されています。
 
-## 今回実装したプラグインの概要
+サードパーティプラグインは [obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) リポジトリで管理されており、ここに自分のプラグインの情報を追加するプルリクエストを投げてマージされれば、晴れて Obsidian のプラグイン管理画面から検索・インストールできるようになります。
 
-今回実装した Obsidian プラグインは「中国語の文に対して、自動でルビとしてピンイン (漢字に対する補助的な発音表記) を追加表示する」機能を持ちます。
+## プラグインの具体的な実装について
 
-![画面録画](https://github.com/0918nobita/obsidian-zhongwen-block/blob/main/images/screen-recording.gif?raw=true)
+### 何をしているかざっくり言うと
 
-実際の挙動としては、言語を `zh-cn` に設定したコードブロックをレンダリングする際に、内容にピンインのルビを付けてレイアウト調整した要素がレンダリングされるように介入して DOM 操作をします。
+このプラグインの実際の挙動としては、言語を `zh-cn` に設定したコードブロックをレンダリングする際に、内容にピンインのルビを付けてレイアウト調整した要素がレンダリングされるように介入して DOM 操作をします。
 
-デフォルト設定ではピンインはマウスホバー時にのみ表示されます。これは、極力ピンインに頼らずに漢字だけを見て発音できるようになるべき、という考えに基づいた挙動です。もちろん設定を変更すればピンインを常時表示するようにもできます。
-
-## Plugin インスタンス
+### Plugin インスタンス
 
 Obsidian プラグインを作るには、まず `Plugin` 抽象クラスを継承したクラスを定義します。
 プラグインが読み込まれるタイミングで `onload` メソッドが呼び出されるため、初期化処理は `onload` 内に定義します。
@@ -91,7 +99,7 @@ export default defineConfig({
 });
 ```
 
-## コードブロックプロセッサの登録
+### コードブロックプロセッサの登録
 
 今回は言語として `zh-cn` が指定されたコードブロックのレンダリング処理をこちらで定義したもので上書きする必要があるので、 `Plugin` 抽象クラスのインスタンスメソッド `registerMarkdownCodeBlockProcessor` を用いてレンダリング処理を登録します。
 
@@ -110,7 +118,7 @@ import { Plugin } from 'obsidian';
 export default class MyPlugin extends Plugin {
   async onload() {
     this.registerMarkdownCodeBlockProcessor(
-      'zh-CN',
+      'zh-cn',
       async (source, el) => {
         // レンダリング処理
       }
@@ -118,3 +126,7 @@ export default class MyPlugin extends Plugin {
   }
 }
 ```
+
+`HTMLElement` という型を見てわかる通り、この引数を通じて実行時の DOM 要素にアクセスできるようになっているので、`el.appendChild(...)` 等で子要素を自由に追加できるわけです。
+
+※ プラグイン開発者向けガイドラインにおいて、セキュリティの観点から `.innerHTML` の利用は避けるように説明されています。
