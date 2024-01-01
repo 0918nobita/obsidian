@@ -39,9 +39,9 @@ https://docs.obsidian.md/Home
 
 プラグイン本体は、基本的には
 
-- `manifest.json` : プラグインに関する情報 (プラグイン名、バージョン、説明等)
-- `main.js` : プラグイン読み込み時に実行される JavaScript
-- `styles.css` : プラグイン読み込み時に適用される CSS
+- `manifest.json`：プラグインに関する情報 (プラグイン名、バージョン、説明等)
+- `main.js`：プラグイン読み込み時に実行される JavaScript
+- `styles.css`：プラグイン読み込み時に適用される CSS
 
 で構成されています。
 
@@ -56,3 +56,53 @@ https://docs.obsidian.md/Home
 実際の挙動としては、言語を `zh-cn` に設定したコードブロックをレンダリングする際に、内容にピンインのルビを付けてレイアウト調整した要素がレンダリングされるように介入して DOM 操作をします。
 
 デフォルト設定ではピンインはマウスホバー時にのみ表示されます。これは、極力ピンインに頼らずに漢字だけを見て発音できるようになるべき、という考えに基づいた挙動です。もちろん設定を変更すればピンインを常時表示するようにもできます。
+
+## Plugin インスタンス
+
+Obsidian プラグインを作るには、まず `Plugin` 抽象クラスを継承したクラスを定義します。
+プラグインが読み込まれるタイミングで `onload` メソッドが呼び出されるため、初期化処理は `onload` 内に定義します。
+そしてこのクラスをデフォルトエクスポートします。ここでは ES Module として記述していますが、`main.js` は CommonJS 形式であることが要求されるため、ビルドツールによっては設定を変更する必要があります。
+
+```typescript
+import { Plugin } from 'obsidian';
+
+export default class MyPlugin extends Plugin {
+  async onload() {
+    // 読み込まれた時の処理
+  }
+}
+```
+
+Vite の場合のビルド設定：
+
+```typescript
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  build: {
+    lib: {
+      entry: 'src/main.ts',
+      formats: ['cjs'],
+    },
+    ...
+  },
+  ...
+});
+```
+
+## コードブロックプロセッサの登録
+
+今回は言語として `zh-cn` が指定されたコードブロックのレンダリング処理をこちらで定義したもので上書きする必要があるので、 `Plugin` 抽象クラスのインスタンスメソッド `registerMarkdownCodeBlockProcessor` を用いてレンダリング処理を登録します。
+
+第1引数で対象の言語を指定し、第2引数でレンダリングの際に呼び出されるコールバック関数を指定します。
+
+```typescript
+import { Plugin } from 'obsidian';
+
+export default class MyPlugin extends Plugin {
+  async onload() {
+    this.registerMarkdownCodeBlockProcessor('zh-CN', (element, context) => {
+    });
+  }
+}
+```
