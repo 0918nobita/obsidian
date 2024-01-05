@@ -5,7 +5,7 @@ await dv.view('scripts/yearly-expenses', { year: 2023 });
 ```
 ## 残高の推移
 ```dataviewjs
-await dv.view('scripts/yearly-change-in-savings', { year: 2023, base: -70250 });
+await dv.view('scripts/yearly-change-in-savings', { year: 2023, base: -61470 });
 ```
 ```dataview
 TABLE WITHOUT ID

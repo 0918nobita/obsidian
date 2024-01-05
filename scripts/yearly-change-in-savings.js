@@ -45,11 +45,11 @@ series:
     }
 }
 
-if (!('year' in input)) {
-    dv.paragraph('Please specify year');
+if (!("year" in input)) {
+    dv.paragraph("Please specify year");
 } else {
-    if (!('base' in input)) {
-        dv.paragraph('Please specify base');
+    if (!("base" in input)) {
+        dv.paragraph("Please specify base");
     } else {
         await renderChart(input.year, input.base);
     }
