@@ -10,7 +10,7 @@
 - Dataview
 - Link Embed
 - Meld Encrypt
-- Obsidian Charts
+- Charts
 - Periodic Notes
 - Remotely Sync
 - TagFolder
