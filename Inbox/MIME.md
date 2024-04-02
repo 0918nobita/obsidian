@@ -1,0 +1,3 @@
+Multipurpose Internet Mail Extensions
+インターネットで幅広く使えるようにメールのデータ形式を拡張したもの
+OSI 参照モデルの第6層、プレゼンテーション層にあたる
